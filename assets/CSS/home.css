@@ -1,0 +1,114 @@
+#container{
+    width: 94%;
+    /* max-width: 623px; */
+}
+
+#heading{
+    color: grey;
+    margin-left: 40%;
+    margin-bottom: -7px;
+    margin-top: 17px;
+}
+h6{
+    margin-top: -3px;
+    margin-left: 17px;
+    color: grey;
+}
+select{
+    width: 90%;
+    height: 20px;
+    border-style: none;
+    margin-left: 17px;
+    margin-top: -21px;
+}
+select:focus{
+    outline: none;
+}
+input{
+    height: 30px;
+    width: 100%;
+    margin-left: 16px;
+    margin-top: -26px;
+    margin-bottom: -2px;
+    border-style: none;
+    
+}
+input:focus{
+    outline: none;
+}
+span{
+    display: inline-block;
+    width: 48%;
+}
+#category, #date{
+    width: 90%;
+}
+#category:hover, #date:hover{
+    cursor: pointer;
+}
+button{
+    height: 55px;
+    width: 140px;
+    color: white;
+    font-size: 0.9rem;
+    border-style: none;
+}
+#add{
+    background-color: #404444;
+    margin-left: 35%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#delete{
+    background-color: #d53c3c;
+}
+#add:hover, #delete:hover{
+    cursor: pointer;
+}
+i{
+    margin-right: 8px;
+}
+#container_list{
+    margin-top: -3px;
+}
+#box{
+    height: 80px;
+    width: 15px;
+    margin-left: -15px;
+
+}
+#text{
+    margin-top: 3px;
+    margin-left: -250px;
+}
+#box:hover{
+    cursor: pointer;
+}
+#box, #text, #card{
+    display: inline-block;
+    font-size: 19px;
+    color: grey;
+    word-spacing: 4px;
+}
+li{
+    list-style: none;
+}
+#stamp{
+    color: lightslategrey;
+    margin-left: 23px;
+    margin-top: 3px;
+}
+#card{
+    height: 27px;
+    width: 60px;
+    background-color: lightgreen;
+    text-align: center;
+    border-radius: 3px 3px 3px 3px;
+}
+#list_task{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    width: 95%;
+}
