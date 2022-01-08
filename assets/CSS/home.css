@@ -1,13 +1,61 @@
-#container{
-    width: 94%;
-    /* max-width: 623px; */
+/* to design outer div */
+#top_container{
+    width: 70%;
+    height: 45%;
+    max-width: 700px;
+    /* border: 2px solid black; */
+    margin-left: 20%;
+    background-image: linear-gradient(295deg,#404444,#80003b);
+    border-radius: 6px 6px 6px 6px;
+}
+/* to design todo list div */
+#container_list{
+    max-width: 700px;
+    margin-top: -12px;
+    width: 70%;
+    margin-left: 20%;
+    /* border: 2px solid cyan; */
+    border-radius: 6px 6px 6px 6px;
+    background-image: linear-gradient(295deg,#404444,#80003b);
 }
 
+/* to make page responsive */
+@media screen and (max-width: 800px){
+    #top_container{
+        background-color: mediumaquamarine;
+        /* height: 100px; */
+        min-width: 500px;
+    }
+    #container_list{
+        min-width: 500px;
+    }
+    #add{
+        margin-left: 5%;
+        width: 90px;
+    }
+    #delete{
+        width: 90px;
+        margin-left: 8px;
+    }
+}
+
+/* to make heading look good */
 #heading{
-    color: grey;
+    color: rgba(180, 183, 183, 1);
     margin-left: 40%;
     margin-bottom: -7px;
-    margin-top: 17px;
+    margin-top: 0px;
+}
+#list{
+    border-radius: 4px 4px 4px 4px;
+    width: 92%;
+    background-image: linear-gradient(-295deg,#c7a6b2,#a13153);
+    margin-top: -20px;
+}
+#date{
+    border-radius: 4px 4px 4px 4px;
+    width: 90%;
+    background-image: linear-gradient(-295deg,#c7a6b2,#a13153);
 }
 h6{
     margin-top: -3px;
@@ -20,25 +68,32 @@ select{
     border-style: none;
     margin-left: 17px;
     margin-top: -21px;
+    margin-bottom: 6px;
 }
+/* to remove outline while clicked by user */
 select:focus{
     outline: none;
 }
 input{
     height: 30px;
-    width: 100%;
     margin-left: 16px;
     margin-top: -26px;
-    margin-bottom: -2px;
+    margin-bottom: 5px;
     border-style: none;
     
 }
+/* to remove outline while clicked by user */
 input:focus{
     outline: none;
 }
 span{
     display: inline-block;
     width: 48%;
+}
+#category{
+    background-image: linear-gradient(-295deg,#c7a6b2,#a54d68);
+    border-radius: 4px 4px 4px 4px;
+    height: 31px;
 }
 #category, #date{
     width: 90%;
@@ -53,14 +108,20 @@ button{
     font-size: 0.9rem;
     border-style: none;
 }
+#control_button{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 23px;
+}
 #add{
-    background-color: #404444;
-    margin-left: 35%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: #956f84;
+    
+    border-radius: 6px;
 }
 #delete{
-    background-color: #d53c3c;
+    background-color: #786669;;
+    border-radius: 6px;
+    margin-left: 8px;
 }
 #add:hover, #delete:hover{
     cursor: pointer;
@@ -68,23 +129,30 @@ button{
 i{
     margin-right: 8px;
 }
-#container_list{
-    margin-top: -3px;
-}
-#box{
-    height: 80px;
-    width: 15px;
-    margin-left: -15px;
 
+#box{
+    height: 14px;
+    width: 15px;
+    margin-left: -28px;
+    margin-top: 23px;
+    margin-bottom: -41px;
 }
-#text{
-    margin-top: 3px;
-    margin-left: -250px;
+.text{
+    /* text-align: start; */
+    margin-top: 19px;
+    /* margin-left: -350px; */
 }
+#stamp{
+    color: lightslategrey;
+    /* margin-left: 16px; */
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+/* to make curser pointer while hover over it */
 #box:hover{
     cursor: pointer;
 }
-#box, #text, #card{
+#box, .text, #card{
     display: inline-block;
     font-size: 19px;
     color: grey;
@@ -93,22 +161,26 @@ i{
 li{
     list-style: none;
 }
-#stamp{
-    color: lightslategrey;
-    margin-left: 23px;
-    margin-top: 3px;
-}
+
 #card{
     height: 27px;
-    width: 60px;
-    background-color: lightgreen;
+    width: 65px;
+    background-color: #44d1c4;
     text-align: center;
     border-radius: 3px 3px 3px 3px;
+    margin-top: 17px;
 }
-#list_task{
+.list_task{
     /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     height: 25px;
     width: 95%;
+}
+/* to apply strike-through effect */
+.cross{
+    text-decoration: line-through;
+}
+#card {
+    text-decoration:none;
 }

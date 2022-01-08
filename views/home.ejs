@@ -7,49 +7,55 @@
         <link rel="stylesheet" href="./css/home.css" type="text/css">
     </head>
     <body>
-        <!-- <h1>Codeial / <%= title%></h1> -->
-        <form id="container" action="/create_todo" method="post">
-            <h1 id="heading"><%= title%></h1>
-            <hr>
-            <h6>DESCRIPTION</h6>
-            <input type="text" name="text" id="list" placeholder="What do you need to do?" required>
-            <hr>
-            <span >
-                <h6>CATEGORY</h6>
-                <select name="category" id="category">
-                    <option value="none" selected disabled hidden>Choose a category</option>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
-                    <option value="cleaning">cleaning</option>
-                    <option value="personal">personal</option>
-                    <option value="other">other</option>
-                </select>
-            </span>
+        <!-- it's a form to get todo list data  -->
+        <div id="top_container">
+            <form id="container" action="/create_todo" method="post">
+                <h1 id="heading"><%= title%></h1>
+                <hr>
+                <h6>DESCRIPTION</h6>
+                <input type="text" name="text" id="list" placeholder="What do you need to do?" required>
+                <hr>
+                <span >
+                    <h6>CATEGORY</h6>
+                    <select name="category" id="category">
+                        <option value="none" selected disabled hidden>Choose a category</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">cleaning</option>
+                        <option value="personal">personal</option>
+                        <option value="other">other</option>
+                    </select>
+                </span>
+                
+                <span >
+                    <h6>DUE DATE</h6>
+                    <input type="date" name="date" placeholder="dd/mm/yyyy" id="date">
+                </span>
+                <hr>
+            </form>
+            <div id="control_button">
+                <button id="add" form="container"><i class="fas fa-plus"></i> ADD TASK</button>
+                <button id="delete" form="container_list"><i class="fas fa-trash-alt"></i> DELETE TASK</button>
+            </div>
             
-            <span >
-                <h6>DUE DATE</h6>
-                <input type="date" name="date" placeholder="dd/mm/yyyy" id="date">
-            </span>
-            <hr>
-        </form>
-        <button id="add" form="container"><i class="fas fa-plus"></i> ADD TASK</button>
-        <button id="delete"><i class="fas fa-trash-alt"></i> DELETE TASK</button>
-        <hr>
-            <div id="container_list">
-                <ul id="todoList">
-                    <%for(let i of todo_list){%>
+        </div>
+        <!-- it's a list which will display on the page -->
+        <form id="container_list" action="/delete_todo" method="POST"> 
+            <ul id="todoList">
+                <%for(let i of todo_list){%>
                     <li>
-                        <div id="list_task">
-                            <input type="checkbox" id="box">
-                            <p id="text"> <%= i.text%></p> 
-                            <span id="card"> <%= i.category%></span>                                                             
+                        <input type="checkbox" name="tasks" id="box" onclick="strike('<%= i.id%>')" value="<%= i.id%>">
+                        <div class="list_task">
+                            
+                            <p data-id="<%= i.id%>" class="text"> <%= i.text%></p> 
+                            <span id="card" >  <%= i.category%></span>                                                             
                         </div>
-                        <p id="stamp"><i class="fas fa-calendar-alt"></i> <%= i.date%></p>
+                        <p id="stamp" data-id="<%= i.id%>"><i class="fas fa-calendar-alt"></i> <%= i.date%></p>
                         <hr>
                     </li>
                 <%}%>
-                </ul>
-            </div>
+            </ul>
+        </form>
         
 
         <script src="/js/home.js"></script>
